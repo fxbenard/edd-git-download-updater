@@ -446,16 +446,21 @@ class EDD_GIT_Download_Updater_Admin
 
         <td>
             <?php 
-                $tmp = explode( '/', $args['git_url'] );
-                $git_repo = $tmp[4];
-                $tag = $args['git_version'];
-                $default_name = $git_repo. '-' . $tag . '.zip';
+                if ( is_array( $args['git_url'] ) && isset ( $args['git_url'] ) ) {
+                    $tmp = explode( '/', $args['git_url'] );
+                    $git_repo = $tmp[4];
+                    $tag = $args['git_version'];
+                    $default_name = $git_repo. '-' . $tag . '.zip';
 
-                if ( $args['name'] == $default_name ) {
-                    $name = '';
+                    if ( $args['name'] == $default_name ) {
+                        $name = '';
+                    } else {
+                        $name = $args['name'];
+                    }
                 } else {
-                    $name = $args['name'];
+                    $name = '';
                 }
+                
 
                 echo EDD()->html->text( array(
                 'name'        => 'edd_download_files[' . $key . '][name]',
