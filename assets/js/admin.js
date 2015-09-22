@@ -120,8 +120,8 @@ jQuery( document ).ready( function ( $ ) {
 				$( '.git-tag' ).select2();
 
 				if ( 1 == this.useGit ) {
-					$( '.edd_add_repeatable' ).hide();
-					$( '.edd_remove_repeatable' ).hide();
+					$( '#edd_product_files .edd_add_repeatable' ).hide();
+					$( '#edd_product_files .edd_remove_repeatable' ).hide();
 					this.setUpgradeFile();
 				}
 				$( '.edd-git-fetch-prompt' ).eddGitAdminModal( { title: '', buttons: '.edd-git-fetch-prompt-buttons' } );
