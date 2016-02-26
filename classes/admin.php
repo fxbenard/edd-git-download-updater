@@ -452,10 +452,10 @@ class EDD_GIT_Download_Updater_Admin
                     $tag = $args['git_version'];
                     $default_name = $git_repo. '-' . $tag . '.zip';
 
-                    if ( $args['name'] == $default_name ) {
-                        $name = '';
-                    } else {
+                    if ( $args['name'] ) {
                         $name = $args['name'];
+                    } else {
+                        $name = $default_name;
                     }
                 } else {
                     $name = '';
