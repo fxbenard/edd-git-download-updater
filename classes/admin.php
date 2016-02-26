@@ -446,7 +446,7 @@ class EDD_GIT_Download_Updater_Admin
 
         <td>
             <?php 
-                if ( is_array( $args['git_url'] ) && isset ( $args['git_url'] ) ) {
+                if ( isset ( $args['git_url'] ) ) {
                     $tmp = explode( '/', $args['git_url'] );
                     $git_repo = $tmp[4];
                     $tag = $args['git_version'];
